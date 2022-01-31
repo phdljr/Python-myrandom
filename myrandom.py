@@ -1,20 +1,20 @@
 import random as r
 
-list = [0, 0, 0, 0]
+d = {"레어":0, "에픽":0, "유니크":0, "레전더리":0}
 
 def gacha():
-    num = r.random() #0.0~1.0
-    if(num>=0.7):
-        list[0]+=1
+    num = r.random() * 100 #0.0~100.0
+    if(num>=8.0):
+        d["레어"]+=1
         return "레어"
-    elif(0.4<=num<0.7):
-        list[1]+=1
+    elif(1.7<=num<8.0):
+        d["에픽"]+=1
         return "에픽"
-    elif(0.04<=num<0.4):
-        list[2]+=1
+    elif(0.2<=num<1.7):
+        d["유니크"]+=1
         return "유니크"
     else:
-        list[3]+=1
+        d["레전더리"]+=1
         return "레전더리"
 
 count = 0
@@ -25,7 +25,7 @@ while True:
     print(result)
     if(result == ""):
         print("출력 횟수 : ", count)
-        print("통계 : " , list)
+        print("통계 : " , d)
         break;
     
     
